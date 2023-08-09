@@ -8,11 +8,13 @@ import {
 } from "react-router-dom"
 import App from './App.jsx'
 import './index.css'
+import HomePage from './pages/Home.page.jsx'
+import DefaultHOC from './HOC/Default-HOC.jsx'
 
 
 const router = createBrowserRouter(
   createRoutesFromElements (
-  <Route path="/" element={<App/>}>
+  <Route path="/" element={<DefaultHOC/>}>
    
    </Route> )
 

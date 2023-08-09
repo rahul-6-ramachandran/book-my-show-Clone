@@ -1,11 +1,12 @@
 import React from 'react'
 import Slider from 'react-slick'
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function Adcarousel() {
     const settingsLG = {
-         arrows :true, autoplay : true ,centerMode : true , centerPadding : "500px" , slidesToShow : 1 ,infinite: true, slidesToScroll: 1
+         arrows :true, autoplay : true ,centerMode : true , centerPadding : "500px" , slidesToShow : 1 ,infinite: true, slidesToScroll: 1,
     }
 
 
@@ -16,7 +17,9 @@ function Adcarousel() {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1}
+        slidesToScroll: 1,
+       
+        }
     const images = [
         "https://images.unsplash.com/photo-1661956600684-97d3a4320e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
         "https://images.unsplash.com/photo-1691073123397-d93b4e3b9991?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
