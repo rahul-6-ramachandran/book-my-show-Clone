@@ -4,19 +4,29 @@ import {
   Route,
   createBrowserRouter,
   RouterProvider,
-  createRoutesFromElements 
+  createRoutesFromElements, 
+  Routes
 } from "react-router-dom"
-import App from './App.jsx'
+
 import './index.css'
 import HomePage from './pages/Home.page.jsx'
 import DefaultHOC from './HOC/Default-HOC.jsx'
 
+import MovieHOC from './HOC/Movie-HOC'
+
 
 const router = createBrowserRouter(
   createRoutesFromElements (
-  <Route path="/" element={<DefaultHOC/>}>
-   
-   </Route> )
+    
+    <Route path="/" element={<DefaultHOC />} >
+      <Route index element={<HomePage />} />
+      <Route path='/movie' element={<MovieHOC/>}/>
+    </Route>
+      
+      
+
+      )
+    
 
 )
 

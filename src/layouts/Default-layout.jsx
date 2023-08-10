@@ -6,8 +6,7 @@ import Adcarousel from '../components/AdCarousel/ad.carousel'
 function DefaultLayout() {
   return (
     <>
-     <Navbar/>
-    <Adcarousel/>
+     
     </>
    
   )
