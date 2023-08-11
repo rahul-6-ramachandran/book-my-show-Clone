@@ -8,12 +8,20 @@ import {
   Routes
 } from "react-router-dom"
 
+// axios Settings
+import axios from 'axios'
+
 import './index.css'
 import HomePage from './pages/Home.page.jsx'
 import DefaultHOC from './HOC/Default-HOC.jsx'
 
 import MovieHOC from './HOC/Movie-HOC'
 import Playspage from './pages/Plays.page'
+
+// axios default settings
+axios.defaults.baseURL = "https://api.themoviedb.org/3"
+axios.defaults.params = {}
+axios.defaults.params["api_key"] = import.meta.env.VITE_API_KEY;
 
 
 const router = createBrowserRouter(

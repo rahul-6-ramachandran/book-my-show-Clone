@@ -87,12 +87,12 @@ function Moviespage() {
                     <h2 className='text-grey-800 text-2xl font-bold mb-5'>Top reviews</h2>
                     <p>Summary of <span>7.8k</span> reviews</p>
                     <div className='flex flex-wrap gap-3 my-3 items-start'>
-                        <div className='text-btn-300 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#Blockbuster <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
-                        <div className='text-btn-300 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#SuperDirection <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
-                        <div className='text-btn-300 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#GreatActing <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
-                        <div className='text-btn-300 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#WowMusic <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
-                        <div className='text-btn-300 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#Rocking <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
-                        <div className='text-btn-300 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#WellMAde <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
+                        <div className='text-btn-400 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#Blockbuster <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
+                        <div className='text-btn-400 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#SuperDirection <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
+                        <div className='text-btn-400 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#GreatActing <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
+                        <div className='text-btn-400 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#WowMusic <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
+                        <div className='text-btn-400 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#Rocking <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
+                        <div className='text-btn-400 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#WellMAde <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
 
                     </div>
 
