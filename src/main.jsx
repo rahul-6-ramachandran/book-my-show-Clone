@@ -17,6 +17,7 @@ import DefaultHOC from './HOC/Default-HOC.jsx'
 
 import MovieHOC from './HOC/Movie-HOC'
 import Playspage from './pages/Plays.page'
+import MovieProvider from './Context/Movie.context'
 
 // axios default settings
 axios.defaults.baseURL = "https://api.themoviedb.org/3"
@@ -25,23 +26,30 @@ axios.defaults.params["api_key"] = import.meta.env.VITE_API_KEY;
 
 
 const router = createBrowserRouter(
+
   createRoutesFromElements (
     
     <Route path="/" element={<DefaultHOC />} >
       <Route index element={<HomePage />} />
-      <Route path='/movie' element={<MovieHOC/>}/>
+      <Route path='/movie/:id' element={<MovieHOC/>}/>
       <Route path='/plays' element={<Playspage/>}/>
     </Route>
+  
+    
       
       
+
 
       )
-    
-
+      
 )
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <>
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+   
+    <RouterProvider router={router}/>
+  </React.StrictMode>
+  </>
 )

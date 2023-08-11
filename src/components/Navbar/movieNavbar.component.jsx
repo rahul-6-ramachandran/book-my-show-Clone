@@ -1,20 +1,41 @@
-import React from 'react'
+import React ,{useContext, useState,useEffect} from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+
 import { FiChevronRight,FiMenu ,FiChevronDown} from 'react-icons/fi'
 import { TfiSearch } from 'react-icons/tfi'
 import {FaChevronDown} from 'react-icons/fa'
 import {BsShare} from 'react-icons/bs'
 
 
+// Content
+import { MovieContext } from '../../Context/Movie.context'
+
+
+
+
 
 
 function MovieNavbar() {
+    // const [movie,setMovie] = useState([])
+    // const {id} = useParams()
+    // useEffect(()=>{
+    //     const requestMovie = async ()=>{
+    //         const getMovieData = await axios.get(`/movie/${id}`)
+    //         setMovie(getMovieData.data)
+    //         console.log(id)
+    //     }
+    //     requestMovie();
+    // },[])
+
+    const { movie } = useContext(MovieContext)
     return (
 
         <nav className='absolute inset-x-0 z-30 bg-opacity-10 backdrop-filter backdrop-blur-lg lg:relative lg:bg-bms-700 p-3 w-100'>
             {/* For Mobile Screens */}
             <div className=' md:hidden'>
                 <div className='text-white flex item-center justify-between'>
-                    <div className='text-left' ><h3 className='text-white font-bold' >It All Starts Here!</h3>
+                    <div className='text-left' ><h3 className='text-white font-bold' >{movie.original_title}</h3>
                     </div>
                     <div className='p-3 w-9 h-9'>
                         <BsShare className='w-4 h-4 ' />

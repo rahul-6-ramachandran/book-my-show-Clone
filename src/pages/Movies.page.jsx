@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, {useState,useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 // Components
 import MovieLayout from '../layouts/Movie-layout'
 import MovieNavbar from '../components/Navbar/movieNavbar.component'
@@ -10,7 +10,20 @@ import Posterslider from '../components/PosterSlider/Poster.slider.component'
 // Config
 import TempPosters from '../config/TempImages'
 
+
 function Moviespage() {
+
+    const [movie,setMovie] = useState([])
+    const {id} = useParams()
+    useEffect(()=>{
+        const requestMovie = async ()=>{
+            const getMovieData = await axios.get(`/movie/${id}`)
+            setMovie(getMovieData.data)
+            console.log(movie)
+        }
+        requestMovie();
+    },[])
+
     const settings ={
         infinity : false,
         autoplay : false,
