@@ -17,7 +17,7 @@ function Movieherocomponent() {
 
         {/* For Medium Screens */}
         <div className=' relative hidden md:block h-96 w-full lg:hidden ' style={{height: "calc(60vw)"}}>
-        <div className='absolute z-30 bottom-10'>
+        <div className='absolute z-30 bottom-10 '>
                 <MovieInfo/>
             </div>
         <div className='w-full h-8 absolute bg-black z-10 bottom-0 rounded-b-lg  text-white text-center text-md '/>

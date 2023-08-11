@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function MovieInfo() {
   return (
     <> 
-         <div className='mx-3 flex flex-col gap-4'>
+         <div className='mx-3  flex flex-col gap-4'>
             <h1 className=' font-bold mx-5 mt-5 text-4xl text-white item-center'>Jailer</h1>
             <div className='  mx-4 flex item-center'>
                <BiSolidLike className='text-green-700 text-2xl me-2 h-8 item-right'/>
@@ -17,7 +17,7 @@ function MovieInfo() {
                 <h3 className='text-lg font-medium'>In cinemas</h3>
                 <p className='text-xs font-normal'>Are you interested in watching this movie?</p>
                 </div>
-                <div className='hidden lg:block text-center px-3 my-auto'>
+                <div className='hidden md:block text-center px-3 my-auto'>
                     <button className='bg-white p-2 font-medium text-sm text-xs rounded-sm'>I'm Interested</button>
                 </div>
             </div>

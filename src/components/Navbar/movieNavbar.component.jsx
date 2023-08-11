@@ -24,7 +24,7 @@ function MovieNavbar() {
 
 
             {/* For Medium Screens */}
-            <div className='hidden md:block lg:hidden  p-1'>
+            <div className='hidden md:flex justify-between lg:hidden  p-1'>
                 
                     <div className='  flex item-center ms-4 justify-between'>
                         <img className='w-20 ps-3' src="src\assets\images\images (1).png" alt="" />
