@@ -1,7 +1,21 @@
-import React from 'react'
+import React , {useEffect,useState} from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 import MovieInfo from './Movie.info.component'
 
+
 function Movieherocomponent() {
+  
+    const {id} = useParams()
+    const [movie,setMovie] = useState([])
+
+    useEffect(()=>{
+        const requestMovie = async ()=>{
+            const getMovieData = await axios.get(`/movie/${id}`)
+            setMovie(getMovieData.data)
+        }
+        requestMovie()
+    },[])
   return (
     <div>
         {/* For Mobile Screens */}
@@ -10,7 +24,7 @@ function Movieherocomponent() {
                 <MovieInfo/>
             </div>
             <div className='w-full h-8 absolute bg-black z-10 bottom-0 rounded-b-lg  text-white text-center text-md '/>
-                <img className='w-full h-full rounded-md' src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/medium/jailer-et00331686-1664432415.jpg" alt="" />
+                <img className='w-full h-full rounded-md' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" />
             
         </div>
 
@@ -22,7 +36,7 @@ function Movieherocomponent() {
             </div>
         <div className='w-full h-8 absolute bg-black z-10 bottom-0 rounded-b-lg  text-white text-center text-md '/>
 
-                 <img className='w-full h-full' src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/medium/jailer-et00331686-1664432415.jpg" alt="" />
+                 <img className='w-full h-full' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" />
 
         </div>
 
@@ -38,14 +52,14 @@ function Movieherocomponent() {
              />
             <div className='absolute z-30 left-24 top-10 flex item-center gap-6'>
                 <div className='  w-64 h-96  '>
-                    <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/jailer-et00331686-1664432415.jpg" alt=""  className='w-full h-full rounded-xl'/>
+                    <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt=""  className='w-full h-full rounded-xl '/>
                 </div>
                 <div>
                     <MovieInfo/>
                 </div>
             </div>
 
-            <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/listing/medium/jailer-et00331686-1664432415.jpg" alt="" className='w-full h-full' />
+            <img src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt="" className='w-full h-full' />
            
         </div>
     </div>

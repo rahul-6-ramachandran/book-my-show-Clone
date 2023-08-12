@@ -1,15 +1,33 @@
-import React from 'react'
+import React , {useState,useEffect} from 'react'
+import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
 import {BiSolidLike} from 'react-icons/bi'
-import { Link } from 'react-router-dom'
+
+
 
 function MovieInfo() {
+
+    const {id} = useParams()
+    const [movie,setMovie] = useState([])
+
+    useEffect(()=>{
+        const requestMovie = async ()=>{
+            const getMovieData = await axios.get(`/movie/${id}`)
+            setMovie(getMovieData.data)
+        }
+        requestMovie()
+    },[])
+
+    
+    const genres = movie.genres?.map(({name}) => name).join(",")  
+
   return (
     <> 
          <div className='mx-3  flex flex-col gap-4'>
-            <h1 className=' font-bold mx-5 mt-5 text-4xl text-white item-center'>Jailer</h1>
+            <h1 className=' font-bold mx-5 mt-5 text-4xl text-white item-center'>{movie.original_title}</h1>
             <div className='  mx-4 flex item-center'>
                <BiSolidLike className='text-green-700 text-2xl me-2 h-8 item-right'/>
-               <p className='text-white mx-0'><span className='text-2xl font-medium'>326.1K</span>  are interested</p>
+               <p className='text-white mx-0'><span className='text-2xl font-medium'>{movie.popularity}</span>  are interested</p>
             </div>
             
             <div className='flex item-center justify-between bg-transparent border-white border rounded-lg mx-4'>
@@ -35,11 +53,10 @@ function MovieInfo() {
                 </div>
             </div>
             <div className='text-white text-md font-normal mx-3 px-1'>
-                <h4>2hr 49m &bull; <Link>Action</Link>,
-                <Link>Drama</Link>,
-                <Link>Thriller</Link> &bull;
+                <h4>{(movie.runtime/60).toFixed(2)} hrs &bull; 
+                <Link>{genres}</Link> &bull;
                 UA &bull;
-                10 Aug,2023
+                {movie.release_date}
                  </h4>
             </div>
 

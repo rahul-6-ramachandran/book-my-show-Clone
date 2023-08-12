@@ -37,6 +37,7 @@ function HomePage() {
         }
         requestUpcomingMovies();
     },[])
+    
 
     return (
         <>

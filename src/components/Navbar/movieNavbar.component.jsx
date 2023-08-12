@@ -17,18 +17,17 @@ import { MovieContext } from '../../Context/Movie.context'
 
 
 function MovieNavbar() {
-    // const [movie,setMovie] = useState([])
-    // const {id} = useParams()
-    // useEffect(()=>{
-    //     const requestMovie = async ()=>{
-    //         const getMovieData = await axios.get(`/movie/${id}`)
-    //         setMovie(getMovieData.data)
-    //         console.log(id)
-    //     }
-    //     requestMovie();
-    // },[])
+    const [movie,setMovie] = useState([])
+    const {id} = useParams()
+    useEffect(()=>{
+        const requestMovie = async ()=>{
+            const getMovieData = await axios.get(`/movie/${id}`)
+            setMovie(getMovieData.data)
+            console.log(id)
+        }
+        requestMovie();
+    },[])
 
-    const { movie } = useContext(MovieContext)
     return (
 
         <nav className='absolute inset-x-0 z-30 bg-opacity-10 backdrop-filter backdrop-blur-lg lg:relative lg:bg-bms-700 p-3 w-100'>

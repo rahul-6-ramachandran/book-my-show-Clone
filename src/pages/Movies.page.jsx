@@ -1,5 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { useParams } from 'react-router-dom'
+import axios from 'axios'
+
 // Components
 import MovieLayout from '../layouts/Movie-layout'
 import MovieNavbar from '../components/Navbar/movieNavbar.component'
@@ -11,17 +13,26 @@ import Posterslider from '../components/PosterSlider/Poster.slider.component'
 import TempPosters from '../config/TempImages'
 
 
+
 function Moviespage() {
 
     const [movie,setMovie] = useState([])
+    const [likedMovies,setLikedMovies] = useState([])
     const {id} = useParams()
     useEffect(()=>{
         const requestMovie = async ()=>{
             const getMovieData = await axios.get(`/movie/${id}`)
             setMovie(getMovieData.data)
-            console.log(movie)
         }
         requestMovie();
+    },[])
+
+    useEffect(()=>{
+        const requestLikeMovie = async ()=>{
+            const getLikedMovieData = await axios.get("/movie/top_rated")
+            setLikedMovies(getLikedMovieData.data.results)
+        }
+        requestLikeMovie();
     },[])
 
     const settings ={
@@ -64,7 +75,7 @@ function Moviespage() {
     <div className='container my-12 mx-auto px-4 lg:ml-20 lg:2/5'>
         <div className='flex flex-col items-start gap-3'>
              <h2 className='text-grey-800 text-2xl font-bold'>About The Movie</h2>
-        <p>Muthuvel Pandian is a strict yet empathetic jailer who must stop a gang from trying to rescue their leader from prison.</p>
+        <p>{movie.overview}</p>
         </div>
         <div className='my-8'>
             <hr />
@@ -98,7 +109,7 @@ function Moviespage() {
         <div className='my-8'>
         <div className=' flex flex-col items-start my-8 '>
                     <h2 className='text-grey-800 text-2xl font-bold mb-5'>Top reviews</h2>
-                    <p>Summary of <span>7.8k</span> reviews</p>
+                    <p>Summary of <span>{movie.vote_average}</span> reviews</p>
                     <div className='flex flex-wrap gap-3 my-3 items-start'>
                         <div className='text-btn-400 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#Blockbuster <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
                         <div className='text-btn-400 border-grey-400 text-lg  border rounded-full px-8 py-2 '>#SuperDirection <span className='text-black text-sm p-1 bg-bms-100'>540</span></div>
@@ -113,7 +124,7 @@ function Moviespage() {
 
         </div>
         <div className='my-8'> 
-            < Posterslider images={TempPosters}
+            < Posterslider images={likedMovies}
                 config = {settings}
                 isDark = {false}
                 title="You might also like"

@@ -10,7 +10,7 @@ function PosterComponent(props) {
             </div>
             <div className=''>
             <h3 className={`text-sm lg:text-lg font-bold ${props.isDark ? "text-white" : "text-gray-700" }`}>{props.original_title}</h3></div>
-            <p className={`text-sm font-bold ${props.isDark ? "text-white" : "text-gray-700" }`}>{props.subtitle}</p>
+            <p className={`text-sm font-bold ${props.isDark ? "text-white" : "text-gray-700" }`}>{props.original_language}</p>
             
          </div>
     </Link>

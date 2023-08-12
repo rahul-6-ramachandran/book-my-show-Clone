@@ -29,7 +29,7 @@ const router = createBrowserRouter(
 
   createRoutesFromElements (
     
-    <Route path="/" element={<DefaultHOC />} >
+    <Route path="/" element={<DefaultHOC/>} >
       <Route index element={<HomePage />} />
       <Route path='/movie/:id' element={<MovieHOC/>}/>
       <Route path='/plays' element={<Playspage/>}/>

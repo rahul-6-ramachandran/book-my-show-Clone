@@ -1,4 +1,4 @@
-import React , {useEffect,useContext }from 'react'
+import React , {useEffect,useContext, useState }from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 
@@ -16,16 +16,16 @@ import { MovieContext } from '../Context/Movie.context'
 
 function MovieLayout(props) {
 
-    const {id} = useParams()
-    const {movie,setMovie} = useContext(MovieContext)
+    // const {id} = useParams()
+    // const [movie,setMovie] = useState([])
 
-    useEffect(()=>{
-        const requestMovie = async ()=>{
-            const getMovieData = await axios.get(`/movie/${id}`)
-            setMovie(getMovieData.data)
-        }
-        requestMovie()
-    },[])
+    // useEffect(()=>{
+    //     const requestMovie = async ()=>{
+    //         const getMovieData = await axios.get(`/movie/${id}`)
+    //         setMovie(getMovieData.data)
+    //     }
+    //     requestMovie()
+    // },[])
 
   return (
     <>
