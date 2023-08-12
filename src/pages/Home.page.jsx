@@ -32,8 +32,8 @@ function HomePage() {
 
     useEffect(()=>{
         const requestUpcomingMovies = async ()=>{
-            const getImages = await axios.get("/movie/upcomings")
-            setUpcomingMovies(getImages.data.results)
+            const getOutdoorImg = await axios.get("/movie/upcoming")
+            setUpcomingMovies(getOutdoorImg.data.results)
         }
         requestUpcomingMovies();
     },[])

@@ -15,7 +15,7 @@ function Movieherocomponent() {
             setMovie(getMovieData.data)
         }
         requestMovie()
-    },[])
+    },[id])
   return (
     <div>
         {/* For Mobile Screens */}

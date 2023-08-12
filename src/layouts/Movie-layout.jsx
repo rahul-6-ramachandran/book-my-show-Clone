@@ -16,16 +16,16 @@ import { MovieContext } from '../Context/Movie.context'
 
 function MovieLayout(props) {
 
-    // const {id} = useParams()
-    // const [movie,setMovie] = useState([])
+    const {id} = useParams()
+    const [movie,setMovie] = useState([])
 
-    // useEffect(()=>{
-    //     const requestMovie = async ()=>{
-    //         const getMovieData = await axios.get(`/movie/${id}`)
-    //         setMovie(getMovieData.data)
-    //     }
-    //     requestMovie()
-    // },[])
+    useEffect(()=>{
+        const requestMovie = async ()=>{
+            const getMovieData = await axios.get(`/movie/${id}`)
+            setMovie(getMovieData.data)
+        }
+        requestMovie()
+    },[id])
 
   return (
     <>

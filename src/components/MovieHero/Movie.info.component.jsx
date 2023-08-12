@@ -2,10 +2,13 @@ import React , {useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import {BiSolidLike} from 'react-icons/bi'
+import PaymentModal from '../Payment.Model/PAymaent.model.component'
 
 
 
 function MovieInfo() {
+    const [isOpen,setIsOpen] = useState(false)
+    const [price,setPrice] = useState(0)
 
     const {id} = useParams()
     const [movie,setMovie] = useState([])
@@ -21,8 +24,13 @@ function MovieInfo() {
     
     const genres = movie.genres?.map(({name}) => name).join(",")  
 
+    const BookMovies = ()=>{
+        setIsOpen(true)
+        setPrice(149)
+    }
   return (
     <> 
+    <PaymentModal setIsOpen={setIsOpen} isOpen={isOpen} price={price}/>
          <div className='mx-3  flex flex-col gap-4'>
             <h1 className=' font-bold mx-5 mt-5 text-4xl text-white item-center'>{movie.original_title}</h1>
             <div className='  mx-4 flex item-center'>
@@ -61,7 +69,7 @@ function MovieInfo() {
             </div>
 
             <div className='flex item-center px-4 md:w-screen lg:w-full'>
-                <button className='bg-btn-400 text-white px-16 py-3 rounded-lg'>
+                <button className='bg-btn-400 text-white px-16 py-3 rounded-lg' onClick={BookMovies}>
                     Book Tickets
                 </button>
             </div>
