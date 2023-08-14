@@ -2,7 +2,7 @@ import React , {useState,useEffect} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import {BiSolidLike} from 'react-icons/bi'
-import PaymentModal from '../Payment.Model/PAymaent.model.component'
+import PaymentModal from '../Payment.Model/Paymaent.model.component'
 
 
 
