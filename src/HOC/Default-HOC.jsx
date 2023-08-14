@@ -1,6 +1,6 @@
 import React from 'react'
-import DefaultLayout from '../layouts/default-layout'
 import { Outlet } from 'react-router-dom';
+import DefaultLayout from '../layouts/Default-layout';
 
 function DefaultHOC() {
   return (
